@@ -21,6 +21,8 @@ namespace StringSortedByBubbleMethod
 
         public static string[] GenerateStringArray(int arraySize, int minStringSize, int maxStringSize)
         {
+            if (arraySize <= 0) return null;
+            if (minStringSize <= 0 || maxStringSize <= 0) return null;
             string[] array = new string[arraySize];
             Random random = new Random(Guid.NewGuid().GetHashCode());
             for (int i = 0; i < array.Length; i++)
