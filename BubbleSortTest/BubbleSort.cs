@@ -34,7 +34,8 @@ namespace BubbleSortTest
         public void BubbleSortTest(IComparer<string> comparer)
         {
             string[] array = Utils.GenerateStringArray(ARRAY_SIZE, MIN_STRING_LENGTH, MAX_STRING_LENGTH);
-            string[] sortedArray = Sort.BubbleSort(array, comparer);
+            string[] sortedArray = array;
+            Sort.BubbleSort(sortedArray, comparer);
             Array.Sort(array, comparer);
             Assert.That(array, Is.EqualTo(sortedArray));
         }

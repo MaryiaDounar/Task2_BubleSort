@@ -8,7 +8,7 @@ namespace StringSortedByBubbleMethod
 {
     public class Sort
     {
-       public static string[] BubbleSort(string[] array, IComparer<string> comparer)
+       public static void BubbleSort(string[] array, IComparer<string> comparer)
         {
             for (int i = 1; i < array.Length; i++)
             {
@@ -16,20 +16,18 @@ namespace StringSortedByBubbleMethod
                 {
                     if (comparer.Compare(array[j], array[j+1]) > 0)
                     {
-                       Swap(array, j, j+1);
+                       Swap(ref array[j],ref array[j+1]);
                     }
                 }
             }
-            return array;
         }
 
-        private static string[] Swap(string[] array, int i, int j)
+        private static void Swap(ref string s1,ref string s2)
         {
              string temp = string.Empty;
-             temp = array[i];
-             array[i] = array[j];
-             array[j] = temp;
-             return array;
+             temp = s1;
+             s1 = s2;
+             s2 = temp;
         }
 
        

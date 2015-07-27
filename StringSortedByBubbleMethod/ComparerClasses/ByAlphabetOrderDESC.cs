@@ -8,7 +8,7 @@ namespace StringSortedByBubbleMethod.ComparerClasses
 {
     public class ByAlphabetOrderDESC : IComparer<string>
     {
-    int IComparer<string>.Compare(string s1, string s2)
+    public int Compare(string s1, string s2)
         {
             return s2.CompareTo(s1);
         }
